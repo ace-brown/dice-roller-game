@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #365f82 0%, #0f5393 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper --------------------------------------------------------------------------------- */
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 160rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem 9rem 0 9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+.name {
+  position: absolute;
+  top: 15%;
+  font-size: 8rem;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+  word-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #1a6fa8;
+  letter-spacing: 3px;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: #3670c7;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: #ddd;
+  letter-spacing: 3px;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* Game controlls ----------------------------------------------------------------------- */
+
+.game-controlls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.btn {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice-controll {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4vh;
+}
+
+.btn--roll {
+  margin-bottom: 3rem;
+}
+
+.dice {
+  height: 14rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 70em) {
+  .wrapper {
+    width: 70%;
+    height: 60rem;
+    flex-direction: column;
+    margin: 2rem auto;
+  }
+
+  .player {
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name {
+    position: relative;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .score {
+    font-size: 4rem;
+    margin-right: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .current {
+    width: 30%;
+    padding: 1rem;
+    letter-spacing: 1px;
+  }
+
+  /* Game controlls ----------------------------------------------------------------------- */
+
+  .game-controlls {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+  }
+  .current-label {
+    font-size: 1.3rem;
+
+    letter-spacing: 1px;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
+
+  .dice-controll {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    margin-top: 13.5vh;
+  }
+
+  .dice {
+    height: 7rem;
+    width: 7rem;
+  }
+}
